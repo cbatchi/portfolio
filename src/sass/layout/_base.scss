@@ -1,0 +1,44 @@
+.app {
+  min-height: auto;
+  overflow: hidden;
+}
+
+.btn { 
+
+  @include btn-factory (1.2rem, 2rem);
+
+  &-primary,
+  &-action { 
+    &:first-of-type { @include btn-factory-primary($blue-light, $black, .6); }
+    
+    @include btn-factory-primary($blue-light, $white, .6);
+
+    transition: .2s;
+    background-color: transparent;
+    color: rgba($white, .9);
+    border: 1px solid rgba($blue-light, .6) !important;
+  
+    &:hover {
+      color: rgba($white, .8);
+      background-color: rgba($blue-light, .8);
+      border: 1px solid $white;
+      border-radius: 2rem;
+      box-shadow: 0px .4px 8px rgba($green, .2);
+      transform: scale(.87);
+    }
+  }
+}
+
+
+.blue {
+  @include set-color($blue-light);
+  font-weight: bold;
+  display: inline-block;
+  text-align: left;
+  padding: 1.2rem;
+  
+  color: $blue-light;
+  font-size: 1.5rem;
+  text-align: justify;
+  hyphens: auto;
+}

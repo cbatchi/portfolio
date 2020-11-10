@@ -1,0 +1,37 @@
+.container {
+  
+  padding: 0 15px;
+  margin: 0 auto;
+  overflow: hidden;
+
+  @include media-breakpoint-down ("xsmall") {
+    max-width: 32.999rem;
+    padding: 0 20px;
+  }
+
+  @include media-breakpoint-down ("small") { 
+    max-width: 42.999rem;
+  }
+
+  @include media-breakpoint-down ("meduim") { 
+    max-width: 62.999rem;
+  }
+
+  @include media-breakpoint-down ("large") {
+    max-width: 71.25rem;
+  }
+}
+
+.row {
+  width: 100%;
+
+  @include media-breakpoint-down ("small") { 
+    display: flex; 
+    flex-wrap: wrap;
+  }
+
+  @include media-breakpoint-down ("meduim") { 
+    display: flex; 
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,22 @@
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2.5rem 0;
+  width: 100%;
+}
+
+.card {
+  padding: 1.2rem;
+  overflow: hidden;
+  background-color: $white;
+  box-shadow: 0px 2px 10px 3px rgba($black, .3);
+  border-radius: .5rem;
+
+  @include set-color ($black);
+
+  &:first-child, &:last-child { min-height: auto; }
+
+  &:first-child { width: 40%; margin-right: 3rem; }
+  &:last-child { width: 60%; }
+}

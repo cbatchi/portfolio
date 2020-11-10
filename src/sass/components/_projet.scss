@@ -1,0 +1,4 @@
+.projet {
+  @include block-init-size;
+  @include block-background-image ('team', true);
+}

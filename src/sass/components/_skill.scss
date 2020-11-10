@@ -1,0 +1,4 @@
+.skill { 
+  @include block-init-size;
+  @include block-background-image ('work', true);
+}

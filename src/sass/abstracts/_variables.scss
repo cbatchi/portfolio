@@ -1,0 +1,27 @@
+$blue-deep: #121824;
+
+$green: #139c85;
+
+$blue-light: #17dcef;
+
+$white: #ffffff;
+
+$black: #181618;
+
+// Variable breakpoint pour media queries
+$breakpoints: (
+  xsmall: 35.999rem,
+  small: 47.999rem,
+  meduim: 65.999rem,
+  large: 74.999rem,
+);
+
+// Variables de nom pour background-image
+$bg-images-names: (
+  "header": "mountain",
+  "section-skill": "skill-img",
+  "section-project": "project-img"
+);
+
+$font-roboto: 'Roboto', sans-serif;
+$font-source-sans-pro: 'Source Sans Pro', sans-serif;

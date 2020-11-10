@@ -1,0 +1,143 @@
+@mixin media-breakpoint-down ($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $value: map-get($breakpoints, $breakpoint);
+    @media screen and (min-width: $value) {
+      @content;
+    }
+  }
+}
+
+
+@mixin block-background-image ($image-name: null, $overlay: false) {
+  @if $image-name != null {
+    max-width: 100%;
+    background: url('../../img/' + $image-name + '.jpg') center center no-repeat fixed;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    color: $white;
+
+    @if $overlay {
+      &::before {
+        content: '';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: -1;
+        background-color: rgba($blue-deep, .75);
+      }
+    }
+  }
+}
+
+
+@mixin border-style-logo {
+  border-top-style: solid;
+  border-top-color: $white;
+  border-top-width: 2px;
+  border-top-left-radius: 50%;
+
+  border-bottom-style: solid;
+  border-bottom-color: $white;
+  border-bottom-width: 2px;
+  border-bottom-left-radius: 50%;
+}
+
+@mixin transition-effect ($duration, $mode) { transition: $duration $mode; }
+
+
+@mixin set-color ($color-type: null) { color: $color-type; }
+
+
+@mixin set-bg-color ($color-type: null) { background-color: $color-type; }
+
+
+@mixin set-color-selection ($color-type: null) { 
+  &::selection { @include set-bg-color($color-type); @include set-color($blue-light); }
+}
+
+@mixin btn-factory ($font-size: 1rem, $marginRight: null) {
+  display: inline-block;
+  font-size: $font-size;
+  cursor: pointer;
+  padding: 15px 30px;
+  font-weight: 500;
+  color: $white;
+
+  @if $marginRight { margin-right: $marginRight; }
+}
+
+
+
+@mixin btn-factory-primary ($color, $color2, $opacity) {
+  background-color: rgba($color, $opacity);
+  color: rgba($color2, 1);
+  border-radius: 50px;
+}
+
+
+
+@mixin zoom-effect () {
+  &:nth-child(odd) {
+    animation: bounded 1.5s alternate infinite ease-in-out;
+  
+    @keyframes bounded {
+      from {
+        transform:  translateY(-30px) scale(1);
+      } to {
+        transform:  translateY(0) scale(.7);
+        filter: drop-shadow(20px 16px 20px rgba($blue-light, .7));
+        border: 2px solid $white;
+  
+        @extend .btn-action;
+      }
+    }
+  }
+}
+
+
+@mixin set-svg-size ($value) {
+  margin-right: 1.1rem;
+  font-size: $value;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+@mixin nav-item-state ($state) {
+  @if $state == 'is-active' {
+    &:hover {
+      color: $blue-deep;
+      background-color: transparent;
+      padding: 15px 30px;
+      border-radius: 2px;
+      transition: .5s;
+      border: 2px solid $blue-light;
+      color: $white;
+    }
+  }
+  @else if $state == 'is-not-active' {
+    &:hover {
+      color: $blue-deep;
+      padding-bottom: 5px;
+      transition: .5s;
+      border-radius: 2px;
+      border-bottom: 2px solid $blue-light;
+    }
+  }
+}
+
+
+
+@mixin block-init-size ($color: $white, $bgColor: null) {
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+
+  @if $bgColor { background-color: $bgColor; }
+  
+  @if $color == $white { color: $color; }
+  @else { color: $blue-deep; }
+}

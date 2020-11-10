@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  @include set-color-selection (rgba($blue-deep, .8));
+}
+
+
+body {
+  font-family: $font-roboto;
+  color: $white;
+  line-height: 1.2;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@for $i from 1 through 6 {
+  h#{$i}{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    color: inherit;
+    padding: 3rem;
+    text-align: center;
+    font-weight: normal;
+    width: 100%;
+  }
+}
+
+p {
+  width: 100%;
+}
+
+svg { @include set-svg-size (1.5rem); }

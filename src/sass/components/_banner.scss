@@ -1,0 +1,50 @@
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  color: $white;
+  min-width: 100%;
+
+  &-title {
+    font-weight: bold;
+    font-size: 8rem;
+    line-height: .7em;
+    padding: 2rem;
+    
+    > span {
+      display: inline;
+      text-align: center;
+      
+      &:first-of-type { text-transform: capitalize; }
+      
+      &:last-of-type {
+        letter-spacing: .2rem;
+        color: rgba($white, .5);
+        font-weight: 400;
+        font-size: 3.4375rem;
+        text-transform: uppercase;
+        
+        @include set-color ($blue-light);
+      }
+    }
+  }
+
+
+  // Banner-panel
+  &-panel {
+    max-width: 100%;
+    min-height: auto;
+    overflow: hidden;
+    padding: 5rem 0;
+    margin-bottom: 5rem;
+    font-weight: 500;
+    border-bottom: 2px double rgba($white, .4);
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+}
+

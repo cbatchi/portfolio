@@ -1,0 +1,10 @@
+.button {
+  width: 100%;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 1rem !important;
+  text-align: justify;
+  
+  > * { color: $black; hyphens: auto;  }
+}
